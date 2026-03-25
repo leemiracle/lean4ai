@@ -22,6 +22,15 @@ Thumbs.db
 *.bak
 *.log
 
-# 依赖目录（如果太大可以排除）
-# node_modules/
-# .elan/
+# 大型仓库（不作为submodule时忽略）
+# 如果需要管理这些仓库，请：
+# 1. 作为submodule: 运行 ./setup_core_submodules.sh
+# 2. 单独克隆: 参考 LEAN4_REPOSITORIES.md
+mathlib4/
+# LeanProject/
+# ProofWidgets4/
+# aesop/
+# batteries/
+# quote4/
+# repl/
+# duper/
