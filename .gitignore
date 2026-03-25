@@ -1,0 +1,27 @@
+# Lean4 编译产物
+*.olean
+*.ilean
+*.lean.trace
+.lake/
+build/
+lib/
+
+# 编辑器和IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.bak
+*.log
+
+# 依赖目录（如果太大可以排除）
+# node_modules/
+# .elan/
