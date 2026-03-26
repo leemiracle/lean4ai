@@ -34,3 +34,12 @@ mathlib4/
 # quote4/
 # repl/
 # duper/
+
+# 忽略其他项目
+tech-dictionary/
+
+# 临时文件
+*.tmp
+*.bak
+*~
+.DS_Store
