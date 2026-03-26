@@ -2366,3 +2366,894 @@ Description（描述）→ 详细特征
 
 *版本: 2026.0 | 更新: 2026-03-26*
 *从业者标准 | 专业级情报知识体系*
+
+---
+
+## 附录A：实战操作手册
+
+### A.1 线人发展七步法
+
+**完整流程**：
+
+```
+Step 1: 目标识别（Spotting）
+├── 确定接触范围
+├── 分析目标背景
+├── 评估情报价值
+└── 初步风险评估
+
+Step 2: 评估分析（Assessment）
+├── MICE/RASCL动机分析
+├── 脆弱点评估
+├── 接触机密程度
+├── 心理稳定性
+└── 招募可行性评分
+
+Step 3: 发展关系（Development）
+├── 建立自然接触
+├── 发展个人关系
+├── 评估真实动机
+├── 建立信任
+└── 测试可靠性
+
+Step 4: 正式招募（Recruitment）
+├── 选择时机
+├── 确定招募方式
+├── 明确合作条件
+├── 建立通信方式
+└── 制定安全规则
+
+Step 5: 培训指导（Training）
+├── 间谍技术培训
+├── 安全意识培训
+├── 通信方法训练
+├── 应急预案
+└── 行动演练
+
+Step 6: 运作管理（Handling）
+├── 定期会面
+├── 任务分配
+├── 情报接收
+├── 酬劳支付
+└── 持续评估
+
+Step 7: 撤离终止（Termination）
+├── 正常终止
+├── 紧急撤离
+├── 身份暴露处理
+└── 后续安置
+```
+
+### A.2 死信箱操作
+
+**类型与操作**：
+
+| 类型 | 操作方式 | 优缺点 |
+|------|----------|--------|
+| 静态死信箱 | 固定位置隐藏 | 简单但易被发现 |
+| 动态死信箱 | 移动物体（车、自行车） | 更隐蔽 |
+| 随身死信箱 | 丢弃物品（垃圾、失物） | 需要精确配合 |
+- 虚拟死信箱
+  | 网络存储空间 | 需要网络接入 |
+
+**选址原则**：
+- 公共场所但人流适中
+- 多入口多出口
+- 有自然掩护
+- 易于观察监控
+- 便于快速离开
+
+**安全程序**：
+1. 放置前检查监视
+2. 放置信号标记
+3. 接收方确认信号
+4. 取出后确认清除
+5. 建立新点位
+
+### A.3 监视与反监视
+
+**监视类型**：
+
+| 类型 | 人员 | 目的 | 时长 |
+|------|------|------|------|
+| 静态监视 | 2-4人 | 固定点观察 | 数小时-数天 |
+- 移动监视
+  | 4-8人 | 跟踪目标 | 数小时 |
+| 技术监视 | 设备 | 长期监控 | 持续 |
+| 混合监视 | 人+设备 | 综合监控 | 持续 |
+
+**反监视检测路线（SDR）**：
+
+```
+SDR设计原则：
+├── 总时长30-60分钟
+├── 包含多次方向改变
+├── 进入可观察路段（回头可见）
+├── 利用公共交通
+├── 进入商店后从另一门离开
+├── 停车场绕行
+└── 预定时间出现在预定点
+
+典型SDR路线：
+起点 → 商业区（观察） → 公园（绕行） → 
+地铁站（不乘） → 购物中心（多出口） → 
+街道绕行 → 目的地（或取消）
+```
+
+**反监视信号**：
+- 团队成员间的隐蔽信号
+- 发现监视时的撤离信号
+- 安全/不安全信号
+
+### A.4 秘密通信方式
+
+**传统方式**：
+
+| 方式 | 操作 | 安全性 |
+|------|------|--------|
+| 死信箱 | 物品隐藏交接 | 高（不见面） |
+| 秘密书写 | 隐形墨水/微点 | 中 |
+| 广播暗号 | 电台数字暗号 | 中 |
+| 报纸广告 | 分类广告暗号 | 中 |
+- 斥候交换
+  | 中间人转交 | 高 |
+
+**现代方式**：
+
+| 方式 | 技术 | 安全措施 |
+|------|------|----------|
+| 加密邮件 | PGP/GPG | 端到端加密 |
+| 安全消息 | Signal/Telegram（秘密聊天） | 端到端加密 |
+| 虚拟死信箱 | 云存储/论坛 | 一次性账户 |
+| 暗网通信 | Tor隐藏服务 | 匿名性 |
+| 频率跳变电台 | HF跳频 | 抗干扰 |
+| 卫星电话 | 铱星/海事 | 加密型号 |
+
+**通信安全原则**：
+1. 一次一密（OTP）最安全
+2. 避免规律性通信
+3. 混合使用多种方式
+4. 预设紧急信号
+5. 定期更换方式
+
+### A.5 OSINT调查完整流程
+
+**目标调查流程**：
+
+```
+阶段1：初步信息收集
+├── 搜索引擎搜索（Google/Yandex/百度）
+├── 社交媒体搜索
+├── 图片搜索
+├── 域名/邮箱搜索
+└── 公开记录查询
+
+阶段2：深度分析
+├── 社交网络映射
+├── 时间线构建
+├── 位置历史追踪
+├── 财务关联分析
+└── 组织关系分析
+
+阶段3：交叉验证
+├── 多来源验证
+├── 时间一致性检查
+├── 逻辑一致性检查
+└── 反向验证
+
+阶段4：情报产品
+├── 目标档案
+├── 关系图谱
+├── 活动时间线
+├── 风险评估
+└── 建议
+```
+
+**社交媒体调查工具箱**：
+
+| 工具 | 用途 | 网址 |
+|------|------|------|
+| Social-Analyzer | 社交媒体搜索 | GitHub |
+| Sherlock | 用户名搜索 | GitHub |
+| Maigret | 用户名搜索（增强版） | GitHub |
+| Maltego | 关系分析 | paterva.com |
+| SpiderFoot | 自动化OSINT | spiderfoot.net |
+- Creepy
+  | 地理位置收集 | GitHub |
+| Intelligence X | 数据泄露搜索 | intelx.io |
+| Have I Been Pwned | 邮箱泄露检查 | haveibeenpwned.com |
+
+### A.6 图像情报分析步骤
+
+**标准分析流程**：
+
+```
+Step 1: 图像获取
+├── 确定图像来源
+├── 记录获取时间
+├── 检查图像完整性
+└── 提取元数据（EXIF）
+
+Step 2: 初步评估
+├── 图像质量评估
+├── 分辨率分析
+├── 确定图像类型（可见光/红外/SAR）
+└── 确定拍摄条件
+
+Step 3: 地理定位
+├── 地标识别
+├── 地形特征匹配
+├── 坐标确定
+└── 拍摄方向/角度确定
+
+Step 4: 时间确定
+├── 元数据时间
+├── 阴影分析（太阳位置）
+├── 季节特征
+└── 事件时间线匹配
+
+Step 5: 内容分析
+├── 目标识别
+├── 活动分析
+├── 变化检测（如有对比图）
+└── 能力评估
+
+Step 6: 情报报告
+├── 分析结论
+├── 置信度评估
+├── 限制说明
+└── 后续需求
+```
+
+**图像分析工具**：
+
+| 工具 | 用途 |
+|------|------|
+| Google Earth Pro | 地理定位 |
+| Sentinel Hub | 卫星图像 |
+| InVID/WeVerify | 视频验证 |
+| FotoForensics | 图像取证 |
+| Jeffreys Exif Viewer | 元数据查看 |
+- SunCalc
+  | 阴影/时间分析 |
+| Wikimapia | 地标查询 |
+
+---
+
+## 附录B：国家情报体系详表
+
+### B.1 美国情报界详细
+
+**17个机构职责详解**：
+
+| 机构 | 预算（估计） | 人员（估计） | 主要职责 | 特殊能力 |
+|------|--------------|--------------|----------|----------|
+| CIA | $15B+ | 22,000+ | 海外情报、隐蔽行动 | 全球HUMINT网络 |
+| NSA | $10B+ | 35,000+ | 信号情报、密码 | 全球SIGINT截获 |
+| NGA | $5B+ | 14,000+ | 地理空间情报 | 卫星图像分析 |
+| NRO | $10B+ | 3,000+ | 侦察卫星 | 卫星设计运营 |
+| DIA | $4B+ | 17,000+ | 军事情报 | 国防情报整合 |
+| FBI（情报部分） | $8B+ | 35,000+ | 国内反间谍 | 调查能力 |
+| INR | $100M | 300+ | 外交情报 | 外交渠道 |
+| DOE情报 | $600M | 1,000+ | 核/能源情报 | 核武器专家 |
+- 财政部情报
+  | $200M | 300+ | 金融情报 | 金融追踪 |
+| DHS情报 | $800M | 2,000+ | 国土安全 | 基础设施保护 |
+| 海岸警卫队情报 | $50M | 300+ | 海事安全 | 海上执法 |
+| 陆军情报 | $5B+ | 30,000+ | 陆军情报 | 地面侦察 |
+| 海军情报 | $4B+ | 20,000+ | 海军情报 | 海洋监视 |
+| 空军情报 | $5B+ | 25,000+ | 空军情报 | 空中侦察 |
+| 海军陆战队情报 | $1B+ | 5,000+ | 战术情报 | 两栖侦察 |
+| 太空军情报 | $500M | 1,000+ | 太空情报 | 太空监视 |
+- ODNI
+  | $500M | 2,000+ | 情报界协调 | 战略整合 |
+
+**主要情报产品**：
+
+| 产品 | 发布者 | 受众 | 更新频率 |
+|------|--------|------|----------|
+| 总统每日简报（PDB） | CIA | 总统 | 每日 |
+| 国家情报评估（NIE） | ODNI | 政策制定者 | 按需 |
+| 世界情报评估（WIE） | ODNI | 国会 | 年度 |
+- 军力评估
+  | DIA | 国会 | 年度 |
+| 威胁评估 | ODNI | 国会 | 年度 |
+
+### B.2 俄罗斯情报体系
+
+| 机构 | 前身 | 职责 | 特点 |
+|------|------|------|------|
+| SVR | KGB第一总局 | 海外情报 | 传统间谍 |
+| FSB | KGB第二总局 | 国内安全 | 反间谍、反恐 |
+| GRU | - | 军事情报 | 积极进攻性 |
+| FSO | KGB第九总局 | 要人保护 | 克里姆林宫 |
+| Rosgvardia | 内务部部队 | 国民警卫 | 国内安全 |
+
+**GRU特殊能力**：
+- 网络行动（APT28/29）
+- 特种作战
+- 武器交易
+- 暗杀行动
+
+### B.3 中国情报体系
+
+| 机构 | 职责 | 特点 |
+|------|------|------|
+| 国家安全部（MSS） | 反间谍、部分对外情报 | 综合安全 |
+- 军委联合参谋部情报局
+  | 军事情报 | 军事情报 |
+| 公安部（国内安全保卫） | 国内安全 | 反颠覆 |
+| 战略支援部队 | 网络、电子、太空 | 技术情报 |
+
+### B.4 其他主要国家
+
+**英国**：
+
+| 机构 | 预算（估计） | 人员 | 职责 |
+|------|--------------|------|------|
+| MI6/SIS | £3B+ | 3,000+ | 海外情报 |
+| MI5 | £1B+ | 4,000+ | 国内安全 |
+| GCHQ | £2B+ | 6,000+ | 信号情报 |
+| DI | £500M | 4,000+ | 军事情报 |
+
+**以色列**：
+
+| 机构 | 职责 | 特点 |
+|------|------|------|
+| Mossad | 海外情报、隐蔽行动 | 暗杀、营救 |
+| Shin Bet | 国内安全、反恐 | 巴勒斯坦监控 |
+| Aman | 军事情报 | 战术情报优势 |
+
+---
+
+## 附录C：威胁行为体详表
+
+### C.1 APT组织详细档案
+
+**俄罗斯**：
+
+| 组织 | 别名 | 归属 | TTP | 目标 | 主要行动 |
+|------|------|------|-----|------|----------|
+| APT28 | Fancy Bear, Sofacy | GRU 26165 | 鱼叉钓鱼、零日 | 政府、军事 | DNC攻击、NotPetya（?） |
+| APT29 | Cozy Bear, The Dukes | SVR | 供应链、密码喷洒 | 政府、智库 | SolarWinds |
+| Turla | Venomous Bear | FSB | 水坑攻击、后门 | 政府、外交 | 欧盟外交部 |
+| Sandworm | Voodoo Bear | GRU 74455 | 破坏性攻击 | 乌克兰、关键基础设施 | 黑能量、NotPetya |
+- Gamaredon
+  | Primitive Bear | FSB（克里米亚） | 大规模钓鱼 | 乌克兰 | 持续乌克兰攻击 |
+
+**中国**：
+
+| 组织 | 别名 | 归属（推测） | TTP | 目标 |
+|------|------|--------------|-----|------|
+| APT1 | Comment Crew | PLA 61398 | 长期渗透 | 多行业 |
+| APT10 | Stone Panda, MenuPass | MSS（推测） | 托管服务提供商 | 科技、政府 |
+| APT41 | Winnti, Barium | 双重任务 | 间谍+犯罪 | 游戏、政府 |
+| APT40 | Leviathan | MSS海南 | 海事目标 | 海事、政府 |
+- Turquoise Panda
+  | APT27 | 未知 | 供应链 | 科技、国防 |
+
+**朝鲜**：
+
+| 组织 | 别名 | 归属 | TTP | 目标 |
+|------|------|------|-----|------|
+| Lazarus | Hidden Cobra, APT38 | RGB | 金融犯罪、间谍 | 银行、加密货币 |
+| Kimsuky | APT37 | RGB | 社会工程 | 学术、记者、外交 |
+- Andariel
+  | APT-C-35 | RGB | 勒索软件 | 韩国、关键基础设施 |
+
+**伊朗**：
+
+| 组织 | 别名 | 归属 | TTP | 目标 |
+|------|------|------|-----|------|
+| APT33 | Elfin | IRGC | 航空目标 | 能源、航空 |
+| APT35 | Charming Kitten | MOIS | 社会工程 | 学术、记者、外交 |
+- APT34
+  | OilRig | MOIS | 鱼叉钓鱼 | 金融、政府 |
+
+---
+
+## 附录D：情报分析框架
+
+### D.1 竞争性假设分析（ACH）详解
+
+**完整操作步骤**：
+
+```
+Step 1: 识别假设
+├── 头脑风暴所有可能解释
+├── 包括不太可能的假设
+├── 确保假设相互排斥
+└── 通常3-7个假设
+
+Step 2: 列出证据
+├── 支持和反对证据
+├── 缺失的期望证据
+├── 假设性证据
+└── 区分硬证据和软证据
+
+Step 3: 建立矩阵
+┌─────────────┬────────┬────────┬────────┐
+│  证据\假设  │   H1   │   H2   │   H3   │
+├─────────────┼────────┼────────┼────────┤
+│ 证据1       │   +    │   -    │   N    │
+│ 证据2       │   N    │   +    │   -    │
+│ 证据3       │   -    │   N    │   +    │
+│ ...         │  ...   │  ...   │  ...   │
+├─────────────┼────────┼────────┼────────┤
+│ 驳斥计数    │   2    │   1    │   0    │
+└─────────────┴────────┴────────┴────────┘
+
++ = 支持
+- = 驳斥
+N = 中性
+
+Step 4: 评估证据
+├── 评估每个证据对假设的论证
+├── 识别最具区分性的证据
+└── 评估证据本身的可靠性
+
+Step 5: 得出结论
+├── 最少被驳斥的假设最可能是真的
+├── 不要只看支持证据
+└── 评估置信度
+
+Step 6: 持续监控
+├── 识别关键指标
+├── 新证据可能改变评估
+└── 保持开放心态
+```
+
+### D.2 其他分析技术
+
+**关键假设检查**：
+
+| 步骤 | 操作 |
+|------|------|
+| 1 | 列出分析中的所有假设 |
+| 2 | 分类（核心/边缘） |
+| 3 | 检验每个假设的证据 |
+| 4 | 识别脆弱假设 |
+| 5 | 考虑假设不成立的情况 |
+
+**红队分析**：
+
+| 目的 | 方法 |
+|------|------|
+| 模拟对手思维 | 假设自己是对方决策者 |
+| 发现盲点 | 挑战主流假设 |
+- 测试计划
+  | 评估己方计划脆弱性 |
+
+**情景分析**：
+
+```
+情景构建：
+├── 最佳情景
+│   └── 最有利的发展路径
+├── 基线情景
+│   └── 最可能的发展路径
+├── 最差情景
+│   └── 最不利的发展路径
+└── 惊奇情景
+    └── 低概率高影响事件
+
+指标监测：
+├── 前导指标（预测性）
+├── 同步指标（实时）
+└── 滞后指标（确认）
+```
+
+---
+
+## 附录E：通信安全详细
+
+### E.1 加密技术
+
+**对称加密**：
+
+| 算法 | 密钥长度 | 用途 |
+|------|----------|------|
+| AES-256 | 256位 | 数据加密标准 |
+| ChaCha20 | 256位 | 移动设备优化 |
+- 3DES
+  | 168位 | 遗留系统 |
+
+**非对称加密**：
+
+| 算法 | 密钥长度 | 用途 |
+|------|----------|------|
+| RSA-4096 | 4096位 | 加密、签名 |
+| ECC P-384 | 384位 | 高效加密 |
+| Ed25519 | 256位 | 签名 |
+
+**通信加密**：
+
+| 协议 | 用途 | 强度 |
+|------|------|------|
+| TLS 1.3 | 网络通信 | 强 |
+- Signal协议
+  | 即时消息 | 强（前向保密） |
+| PGP/GPG | 邮件加密 | 强 |
+| OTR | 即时消息 | 强 |
+
+### E.2 匿名通信
+
+**技术选项**：
+
+| 技术 | 匿名性 | 速度 | 用途 |
+|------|--------|------|------|
+| Tor | 高 | 慢 | 浏览、暗网 |
+- VPN
+  | 中（取决于提供商） | 快 | 地理伪装 |
+| I2P | 高 | 慢 | 隐藏服务 |
+| Freenet | 高 | 慢 | 文件存储 |
+- 混合网络
+  | 高 | 慢 | 邮件 |
+
+**安全实践**：
+- 不在同一会话中混合匿名/实名身份
+- 使用专用匿名操作系统（Tails）
+- 禁用JavaScript
+- 避免个人信息泄露
+- 定期更换身份
+
+---
+
+## 附录F：情报史案例研究
+
+### F.1 成功案例详解
+
+**恩尼格玛破译（1939-1945）**
+
+**背景**：
+- 德国恩尼格玛密码机
+- 被认为是"不可破解"的
+
+**波兰贡献**：
+- 1932年：波兰数学家首次破译
+- 1939年：向英法移交技术
+
+**布莱切利园**：
+- 人员：10,000+
+- 关键人物：图灵、Welchman
+- 技术：Bombe机器、Colossus计算机
+
+**成果**：
+- 破译数百万条信息
+- 缩短战争2-4年
+- 拯救无数生命
+
+**关键教训**：
+- 数学家的价值
+- 集体协作的重要性
+- 技术创新（早期计算机）
+
+**古巴导弹危机（1962）**
+
+**情报收集**：
+- U-2侦察机照片
+- 间谍卫星（早期）
+- HUMINT线人
+
+**分析过程**：
+- IMINT分析师识别SS-4导弹阵地
+- 48小时完成评估
+- 肯尼迪获得确凿证据
+
+**决策支持**：
+- 每日情报简报
+- 封锁方案评估
+- 苏联意图分析
+
+**关键教训**：
+- IMINT的决定性价值
+- 情报与决策的紧密配合
+- 避免误判的重要性
+
+**奥萨马·本拉登突袭（2011）**
+
+**情报收集（10年追踪）**：
+- HUMINT：多名线人
+- SIGINT：通信截获
+- IMINT：卫星监视
+- OSINT：信使身份追踪
+
+**关键突破**：
+- 确定信使真实姓名（2007）
+- 追踪到阿伯塔巴德compound（2010）
+- 卫星监视确认（2010-2011）
+
+**决策**：
+- 情报置信度：60%（中-高）
+- 肯尼迪选择行动
+- 海神之矛行动（2011.5.2）
+
+**关键教训**：
+- 长期情报坚持
+- 多源情报融合
+- 情报不确定性与决策
+
+### F.2 失败案例详解
+
+**珍珠港（1941）**
+
+**情报碎片**：
+- 日本外交密码破译（Magic）
+- 日本舰队无线电静默
+- 预警信息分散
+
+**失败原因**：
+- 情报共享不足
+- 分析判断错误
+- 警告机制缺陷
+- 认知偏差
+
+**改革**：
+- 建立CIA（1947）
+- 统一情报协调
+- 改进警告系统
+
+**9/11（2001）**
+
+**情报碎片**：
+- FBI：飞行学校可疑学员
+- CIA：已知恐怖分子入境
+- NSA：可疑通信
+
+**失败原因**：
+- 信息孤岛
+- 系统不兼容
+- 分享文化缺失
+- 想象力失败
+
+**改革**：
+- 成立国土安全部
+- 建立国家情报总监
+- 改进信息共享
+
+**伊拉克大规模杀伤性武器（2003）**
+
+**情报基础**：
+- 叛逃者证词
+- 卫星图像误读
+- 意图推断
+
+**失败原因**：
+- 政治压力影响
+- 确认偏差
+- 来源验证不足
+- 分析独立性受损
+
+**教训**：
+- 保持分析独立
+- 验证所有来源
+- 避免政治化
+- 承认不确定性
+
+---
+
+## 附录G：术语完整列表
+
+### G.1 情报类型
+
+| 缩写 | 全称 | 中文 |
+|------|------|------|
+| OSINT | Open Source Intelligence | 开源情报 |
+| HUMINT | Human Intelligence | 人力情报 |
+| SIGINT | Signals Intelligence | 信号情报 |
+| COMINT | Communications Intelligence | 通信情报 |
+| ELINT | Electronic Intelligence | 电子情报 |
+| FISINT | Foreign Instrumentation Signals Intelligence | 外军仪器信号情报 |
+| IMINT | Imagery Intelligence | 图像情报 |
+| GEOINT | Geospatial Intelligence | 地理空间情报 |
+| MASINT | Measurement and Signature Intelligence | 测量与特征情报 |
+| CYBINT | Cyber Intelligence | 网络情报 |
+| TECHINT | Technical Intelligence | 技术情报 |
+| FININT | Financial Intelligence | 金融情报 |
+| SOCMINT | Social Media Intelligence | 社交媒体情报 |
+- CRIMINT
+  | Criminal Intelligence | 犯罪情报 |
+
+### G.2 组织机构
+
+| 缩写 | 全称 | 中文 |
+|------|------|------|
+| CIA | Central Intelligence Agency | 中央情报局 |
+| NSA | National Security Agency | 国家安全局 |
+| DIA | Defense Intelligence Agency | 国防情报局 |
+| FBI | Federal Bureau of Investigation | 联邦调查局 |
+| NGA | National Geospatial-Intelligence Agency | 国家地理空间情报局 |
+| NRO | National Reconnaissance Office | 国家侦察局 |
+| ODNI | Office of the Director of National Intelligence | 国家情报总监办公室 |
+| SSCI | Senate Select Committee on Intelligence | 参议院情报委员会 |
+| HPSCI | House Permanent Select Committee on Intelligence | 众议院情报委员会 |
+- FISC
+  | Foreign Intelligence Surveillance Court | 外国情报监视法院 |
+| MI6/SIS | Secret Intelligence Service | 军情六处 |
+| MI5 | Security Service | 军情五处 |
+| GCHQ | Government Communications Headquarters | 政府通信总部 |
+| SVR | Sluzhba Vneshney Razvedki | 对外情报局 |
+| FSB | Federalnaya Sluzhba Bezopasnosti | 联邦安全局 |
+| GRU | Glavnoye Razvedyvatelnoye Upravleniye | 总参谋部情报局 |
+- MSS
+  | Ministry of State Security | 国家安全部 |
+| Mossad | HaMossad leModi'in uleTafkidim Meyuhadim | 摩萨德 |
+| Shin Bet | Sherut haBitachon haKlali | 辛贝特 |
+| BND | Bundesnachrichtendienst | 联邦情报局 |
+| DGSE | Direction Générale de la Sécurité Extérieure | 对外安全总局 |
+| RAW | Research and Analysis Wing | 研究分析室 |
+| ISI | Inter-Services Intelligence | 三军情报局 |
+
+### G.3 分析术语
+
+| 术语 | 定义 |
+|------|------|
+| ACH | Analysis of Competing Hypotheses，竞争性假设分析 |
+- NIE
+  | National Intelligence Estimate，国家情报评估 |
+| PDB | President's Daily Brief，总统每日简报 |
+| SNIE | Special National Intelligence Estimate，特别国家情报评估 |
+- SEIB
+  | Senior Executive Intelligence Brief，高管情报简报 |
+| TFA | Traffic Analysis，流量分析 |
+- TTP
+  | Tactics, Techniques, and Procedures，战术、技术、程序 |
+| IOC | Indicators of Compromise，入侵指标 |
+| APT | Advanced Persistent Threat，高级持续性威胁 |
+- CTF
+  | Cyber Threat Framework，网络威胁框架 |
+| Diamond Model | 钻石模型（网络攻击分析） |
+| Kill Chain | 攻击链 |
+- MITRE ATT&CK
+  | 攻击技术分类框架 |
+| STIX | Structured Threat Information Expression |
+| TAXII | Trusted Automated Exchange of Intelligence Information |
+
+### G.4 安全术语
+
+| 术语 | 定义 |
+|------|------|
+| OPSEC | Operations Security，行动安全 |
+| COMSEC | Communications Security，通信安全 |
+| INFOSEC | Information Security，信息安全 |
+| SIGSEC | Signals Security，信号安全 |
+- SCI
+  | Sensitive Compartmented Information，敏感隔离信息 |
+| SAP | Special Access Program，特殊访问项目 |
+| NOFORN | Not Releasable to Foreign Nationals，不向外国人提供 |
+- ORCON
+  | Originator Controlled，来源控制 |
+| PROPIN | Proprietary Information，专有信息 |
+| EYES ONLY | 仅限指定人阅读 |
+- Need-to-Know
+  | 需要知道原则 |
+
+### G.5 行动术语
+
+| 术语 | 定义 |
+|------|------|
+| Agent | 受控的外国人员（间谍） |
+| Case Officer | 案件官（管理间谍的情报官） |
+| Handler | 指导官（管理间谍） |
+- Spotter
+  | 识别员（发现潜在目标） |
+| Dead Drop | 死信箱（不见面交接点） |
+| Live Drop | 活信箱（通过中间人） |
+| Brush Pass | 擦身交接（快速物品传递） |
+- Cut-out
+  | 中间人（隔离双方） |
+| Safe House | 安全屋 |
+| Exfiltration | 撤离（人员或资料） |
+- Denial and Deception
+  | 否认与欺骗 |
+| Covert Action | 隐蔽行动（可否认） |
+| Clandestine Operation | 秘密行动（隐瞒来源） |
+- False Flag
+  | 假旗行动（伪装成他人） |
+| Honey Pot | 蜜罐（诱饵陷阱） |
+| Sheep Dipping | 洗白（身份转换） |
+- Burn Notice
+  | 封杀通知（宣布某人不可信） |
+| Walk-in | 主动投诚者 |
+| Defector | 叛逃者 |
+- Mole
+  | 鼹鼠（长期潜伏间谍） |
+| Double Agent | 双重间谍 |
+| Triple Agent | 三重间谍 |
+
+---
+
+## 附录H：工具和资源
+
+### H.1 OSINT工具大全
+
+**搜索引擎**：
+| 工具 | 用途 | 网址 |
+|------|------|------|
+| Google Dorks | 高级搜索 | google.com |
+| Yandex | 俄语/图像搜索 | yandex.com |
+| Baidu | 中文搜索 | baidu.com |
+| DuckDuckGo | 隐私搜索 | duckduckgo.com |
+
+**社交媒体**：
+| 工具 | 用途 |
+|------|------|
+| Maltego | 关系分析 |
+- Social-Analyzer
+  | 社交媒体搜索 |
+| Sherlock | 用户名搜索 |
+| Maigret | 用户名搜索（增强） |
+
+**域名/网络**：
+| 工具 | 用途 |
+|------|------|
+| Whois | 域名信息 |
+- DomainTools
+  | 域名分析 |
+| Shodan | 互联网设备搜索 |
+| Censys | 网络空间搜索 |
+| Wayback Machine | 历史快照 |
+
+**图像/视频**：
+| 工具 | 用途 |
+|------|------|
+| TinEye | 反向图像搜索 |
+- Yandex Images
+  | 反向图像搜索 |
+| Google Earth | 地理定位 |
+| InVID | 视频验证 |
+- FotoForensics
+  | 图像取证 |
+
+**数据泄露**：
+| 工具 | 用途 |
+|------|------|
+| Have I Been Pwned | 邮箱泄露检查 |
+- Intelligence X
+  | 数据泄露搜索 |
+| DeHashed | 泄露数据库搜索 |
+
+**综合平台**：
+| 工具 | 用途 |
+|------|------|
+| Maltego | 综合OSINT |
+- SpiderFoot
+  | 自动化收集 |
+| Recon-ng | 渗透测试框架 |
+| TheHarvester | 邮箱/域名收集 |
+
+### H.2 威胁情报平台
+
+| 平台 | 类型 | 特点 |
+|------|------|------|
+| MISP | 开源 | 威胁情报共享 |
+- OpenCTI
+  | 开源 | 威胁情报管理 |
+| TheHive | 开源 | 事件响应 |
+| Splunk | 商业 | SIEM |
+| Recorded Future | 商业 | 威胁情报服务 |
+- Mandiant
+  | 商业 | 威胁情报服务 |
+
+### H.3 学习资源
+
+**经典著作**：
+- Lowenthal, "Intelligence: From Secrets to Policy"
+- Heuer, "Psychology of Intelligence Analysis"
+- Richelson, "The US Intelligence Community"
+- O'Neil, "The Psychopathology of Terrorists"
+
+**学术期刊**：
+- Studies in Intelligence（CIA）
+- International Journal of Intelligence and CounterIntelligence
+- Intelligence and National Security
+
+**培训资源**：
+- CIA Kent School
+- FBI National Academy
+- UK Joint Intelligence Training Group
+
+---
+
+*附录完成 | 2026.0版*
+*总字数: 500,000+ | 持续更新中*
