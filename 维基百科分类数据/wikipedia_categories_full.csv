@@ -1,0 +1,66 @@
+分类名称,语言,层级,父分类,预估词条数,图标,描述
+内容,zh,1,根分类,150万+,📖,维基百科的核心内容分类
+维基百科,zh,1,根分类,元分类,🏠,维基百科管理相关
+人物,zh,1,根分类,30万+,👤,传记人物相关
+历史,zh,1,根分类,25万+,📜,历史事件和人物
+地理,zh,1,根分类,20万+,🌍,地理相关
+自然科学,zh,1,根分类,40万+,🔬,科学知识
+技术,zh,1,根分类,35万+,⚙️,技术应用
+社会科学,zh,1,根分类,30万+,👥,社会现象
+艺术,zh,1,根分类,20万+,🎨,艺术作品
+文学,zh,1,根分类,15万+,📚,文学作品
+体育,zh,1,根分类,18万+,⚽,体育运动
+经济,zh,1,根分类,25万+,💰,经济活动
+法律,zh,1,根分类,15万+,⚖️,法律制度
+教育,zh,1,根分类,12万+,🎓,教育体系
+医学,zh,1,根分类,20万+,🏥,医学知识
+宗教,zh,1,根分类,10万+,🛐,宗教信仰
+哲学,zh,1,根分类,8万+,🤔,哲学思想
+学术领域,zh,2,内容,50万+,🎓,各学科学术领域
+人物_分类,zh,2,人物,30万+,👤,人物按类型分类
+历史_分类,zh,2,历史,25万+,📜,历史时期分类
+地理_分类,zh,2,地理,20万+,🌍,地理区域分类
+科学_分类,zh,2,自然科学,40万+,🔬,科学分支分类
+技术_分类,zh,2,技术,35万+,⚙️,技术领域分类
+艺术_分类,zh,2,艺术,20万+,🎨,艺术形式分类
+文学_分类,zh,2,文学,15万+,📚,文学作品分类
+音乐,zh,2,艺术,10万+,🎵,音乐相关
+电影,zh,2,艺术,12万+,🎬,电影相关
+体育_分类,zh,2,体育,18万+,⚽,体育项目分类
+生活,zh,2,内容,25万+,🏠,日常生活
+社会_分类,zh,2,社会科学,30万+,👥,社会问题
+Contents,en,1,Root Category,6.7M+,📖, Wikipedia main content
+Wikipedia,en,1,Root Category,Meta,🏠, Wikipedia administration
+People,en,1,Root Category,1.5M+,👤, Biography
+History,en,1,Root Category,800K+,📜, Historical events
+geography,en,1,Root Category,700k+,🌍, Geographic locations
+science,en,1,Root Category,1M+,🔬, Scientific knowledge
+technology,en,1,Root Category,800k+,⚙️, Technical applications
+humanities,en,1,Root Category,600k+,📚, Humanities studies
+arts,en,1,Root Category,500k+,🎨, Art works
+culture,en,1,Root Category,400k+,🎭, Cultural phenomena
+society,en,1,Root Category,500k+,👥, Social issues
+Academic_disciplines,en,2,Contents,2M+,🎓, Academic subjects
+by_nationality,en,2,People,800k+,🌍, People by country
+by_occupation,en,2,People,1M+,💼, People by profession
+by_century,en,2,People,500k+,⏰, People by era
+by_period,en,2,History,400k+,⏰, Historical periods
+by_region,en,2,History,500k+,🌍, Historical regions
+countries,en,2,Geography,100k+,🏳️, Country information
+cities,en,2,Geography,300k+,🏙️, City information
+landforms,en,2,Geography,200k+,🏔️, Landform types
+physics,en,2,science,200k+,⚛️, Physics topics
+chemistry,en,2,science,150k+,🧪, Chemistry topics
+biology,en,2,science,300k+,🦠, Biology topics
+astronomy,en,2,science,100k+,🌌, Astronomy topics
+mathematics,en,2,science,250k+,🔢, Mathematics topics
+computer_science,en,2,technology,300k+,💻, CS topics
+engineering,en,2,technology,200k+,🔧, Engineering fields
+philosophy,en,2,humanities,100k+,🤔, Philosophy topics
+religion,en,2,humanities,150k+,🛐, Religion topics
+language,en,2,humanities,200k+,🗣️, Language topics
+visual_arts,en,2,arts,200k+,🖼️, Visual arts
+performing_arts,en,2,arts,150k+,🎭, Performing arts
+music,en,2,arts,200k+,🎵, Music topics
+popular_culture,en,2,culture,200k+,🎬, Pop culture
+traditions,en,2,culture,100k+,🎊, Traditional customs

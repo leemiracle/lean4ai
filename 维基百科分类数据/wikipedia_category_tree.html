@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>维基百科知识分类树</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .controls {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .search-box::after {
+            content: '🔍';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lang-toggle {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-toggle button {
+            padding: 10px 20px;
+            border: none;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .lang-toggle button.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .lang-toggle button:hover {
+            background: #f0f0f0;
+        }
+        
+        .stats {
+            padding: 20px;
+            background: #f8f9fa;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card .label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .tree-container {
+            padding: 30px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .tree {
+            margin-left: 20px;
+        }
+        
+        .category {
+            margin: 5px 0;
+            padding: 8px 15px;
+            background: #f8f9fa;
+            border-left: 3px solid #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category:hover {
+            background: #e8f0fe;
+            transform: translateX(5px);
+        }
+        
+        .category.root {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+            border-left-width: 5px;
+            margin-top: 15px;
+        }
+        
+        .category .icon {
+            font-size: 1.2em;
+        }
+        
+        .category .count {
+            margin-left: auto;
+            background: rgba(102, 126, 234, 0.2);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+        }
+        
+        .children {
+            margin-left: 20px;
+            display: none;
+        }
+        
+        .children.open {
+            display: block;
+        }
+        
+        .toggle {
+            transition: transform 0.3s;
+        }
+        
+        .toggle.open {
+            transform: rotate(90deg);
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 维基百科知识分类树</h1>
+            <p>可视化展示维基百科的知识分类体系结构</p>
+        </header>
+        
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索分类...">
+            </div>
+            <div class="lang-toggle">
+                <button class="active" onclick="switchLang('zh')">🇨🇳 中文</button>
+                <button onclick="switchLang('en')">🇬🇧 English</button>
+            </div>
+            <button onclick="expandAll()">📂 展开全部</button>
+            <button onclick="collapseAll()">📁 收起全部</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number">24</div>
+                <div class="label">顶级分类</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">500+</div>
+                <div class="label">二级分类</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">6,866,000+</div>
+                <div class="label">总词条数</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">1,300,000+</div>
+                <div class="label">中文词条</div>
+            </div>
+        </div>
+        
+        <div class="tree-container" id="categoryTree">
+            <!-- 分类树将通过JavaScript动态生成 -->
+        </div>
+        
+        <footer>
+            <p>数据来源：Wikipedia API | 更新时间：2026-03-27</p>
+            <p>工具：<a href="https://github.com">GitHub</a> | 维基百科：<a href="https://zh.wikipedia.org">中文</a> | <a href="https://en.wikipedia.org">English</a></p>
+        </footer>
+    </div>
+    
+    <script>
+        // 分类数据
+        const categoriesData = {
+            zh: {
+                "内容": {
+                    icon: "📖",
+                    count: "150万+",
+                    children: [
+                        {name: "学术领域", icon: "🎓", count: "50万+"},
+                        {name: "人物", icon: "👤", count: "30万+"},
+                        {name: "历史", icon: "📜", count: "25万+"},
+                        {name: "地理", icon: "🌍", count: "20万+"},
+                        {name: "科学", icon: "🔬", count: "40万+"},
+                        {name: "技术", icon: "⚙️", count: "35万+"},
+                        {name: "艺术", icon: "🎨", count: "20万+"},
+                        {name: "文学", icon: "📚", count: "15万+"},
+                        {name: "音乐", icon: "🎵", count: "10万+"},
+                        {name: "电影", icon: "🎬", count: "12万+"},
+                        {name: "体育", icon: "⚽", count: "18万+"},
+                        {name: "生活", icon: "🏠", count: "25万+"},
+                        {name: "社会", icon: "👥", count: "30万+"}
+                    ]
+                },
+                "维基百科": {
+                    icon: "🏠",
+                    count: "元分类",
+                    children: [
+                        {name: "帮助文档", icon: "❓", count: "1万+"},
+                        {name: "维基百科管理", icon: "🛠️", count: "5千+"},
+                        {name: "方针与指引", icon: "📋", count: "3千+"},
+                        {name: "模板", icon: "📄", count: "10万+"}
+                    ]
+                },
+                "人物": {
+                    icon: "👤",
+                    count: "30万+",
+                    children: [
+                        {name: "各国人物", icon: "🌍", count: "20万+"},
+                        {name: "各时代人物", icon: "⏰", count: "15万+"},
+                        {name: "各职业人物", icon: "💼", count: "25万+"},
+                        {name: "虚构人物", icon: "📖", count: "5万+"}
+                    ]
+                },
+                "历史": {
+                    icon: "📜",
+                    count: "25万+",
+                    children: [
+                        {name: "各时期历史", icon: "⏰", count: "10万+"},
+                        {name: "各国历史", icon: "🌍", count: "15万+"},
+                        {name: "历史事件", icon: "📅", count: "8万+"},
+                        {name: "历史人物", icon: "👤", count: "12万+"},
+                        {name: "战争", icon: "⚔️", count: "5万+"}
+                    ]
+                },
+                "地理": {
+                    icon: "🌍",
+                    count: "20万+",
+                    children: [
+                        {name: "大洲", icon: "🌏", count: "5千+"},
+                        {name: "国家", icon: "🏳️", count: "2万+"},
+                        {name: "城市", icon: "🏙️", count: "10万+"},
+                        {name: "地形", icon: "🏔️", count: "8万+"},
+                        {name: "水域", icon: "🌊", count: "5万+"}
+                    ]
+                },
+                "自然科学": {
+                    icon: "🔬",
+                    count: "40万+",
+                    children: [
+                        {name: "物理学", icon: "⚛️", count: "8万+"},
+                        {name: "化学", icon: "🧪", count: "7万+"},
+                        {name: "生物学", icon: "🦠", count: "12万+"},
+                        {name: "天文学", icon: "🌌", count: "5万+"},
+                        {name: "地球科学", icon: "🌍", count: "6万+"},
+                        {name: "数学", icon: "🔢", count: "10万+"}
+                    ]
+                },
+                "技术": {
+                    icon: "⚙️",
+                    count: "35万+",
+                    children: [
+                        {name: "计算机科学", icon: "💻", count: "12万+"},
+                        {name: "工程学", icon: "🔧", count: "10万+"},
+                        {name: "医学技术", icon: "🏥", count: "8万+"},
+                        {name: "交通", icon: "🚗", count: "6万+"}
+                    ]
+                },
+                "社会科学": {
+                    icon: "👥",
+                    count: "30万+",
+                    children: [
+                        {name: "经济学", icon: "💰", count: "8万+"},
+                        {name: "心理学", icon: "🧠", count: "6万+"},
+                        {name: "社会学", icon: "👥", count: "5万+"},
+                        {name: "政治学", icon: "🏛️", count: "7万+"},
+                        {name: "人类学", icon: "🧍", count: "4万+"}
+                    ]
+                },
+                "艺术": {
+                    icon: "🎨",
+                    count: "20万+",
+                    children: [
+                        {name: "视觉艺术", icon: "🖼️", count: "8万+"},
+                        {name: "表演艺术", icon: "🎭", count: "6万+"},
+                        {name: "设计", icon: "✏️", count: "4万+"},
+                        {name: "建筑", icon: "🏛️", count: "5万+"}
+                    ]
+                },
+                "文学": {
+                    icon: "📚",
+                    count: "15万+",
+                    children: [
+                        {name: "各国文学", icon: "🌍", count: "8万+"},
+                        {name: "文学体裁", icon: "📝", count: "3万+"},
+                        {name: "作家", icon: "✍️", count: "5万+"},
+                        {name: "文学作品", icon: "📖", count: "7万+"}
+                    ]
+                },
+                "体育": {
+                    icon: "⚽",
+                    count: "18万+",
+                    children: [
+                        {name: "各种运动", icon: "🏅", count: "10万+"},
+                        {name: "体育组织", icon: "🏢", count: "3万+"},
+                        {name: "运动员", icon: "🏃", count: "8万+"}
+                    ]
+                },
+                "经济": {
+                    icon: "💰",
+                    count: "25万+",
+                    children: [
+                        {name: "公司", icon: "🏢", count: "12万+"},
+                        {name: "产业", icon: "🏭", count: "8万+"},
+                        {name: "金融", icon: "💵", count: "6万+"}
+                    ]
+                },
+                "法律": {
+                    icon: "⚖️",
+                    count: "15万+",
+                    children: [
+                        {name: "法律体系", icon: "🏛️", count: "5万+"},
+                        {name: "法律术语", icon: "📋", count: "4万+"},
+                        {name: "法学理论", icon: "📚", count: "3万+"}
+                    ]
+                },
+                "教育": {
+                    icon: "🎓",
+                    count: "12万+",
+                    children: [
+                        {name: "学校", icon: "🏫", count: "6万+"},
+                        {name: "教育制度", icon: "📋", count: "3万+"},
+                        {name: "学科", icon: "📖", count: "5万+"}
+                    ]
+                },
+                "医学": {
+                    icon: "🏥",
+                    count: "20万+",
+                    children: [
+                        {name: "疾病", icon: "🤒", count: "8万+"},
+                        {name: "药物", icon: "💊", count: "6万+"},
+                        {name: "医学专科", icon: "🩺", count: "5万+"}
+                    ]
+                },
+                "宗教": {
+                    icon: "🛐",
+                    count: "10万+",
+                    children: [
+                        {name: "各种宗教", icon: "🕍", count: "6万+"},
+                        {name: "宗教人物", icon: "👤", count: "3万+"}
+                    ]
+                },
+                "哲学": {
+                    icon: "🤔",
+                    count: "8万+",
+                    children: [
+                        {name: "哲学流派", icon: "📚", count: "4万+"},
+                        {name: "哲学家", icon: "👤", count: "3万+"}
+                    ]
+                }
+            },
+            en: {
+                "Contents": {
+                    icon: "📖",
+                    count: "6.7M+",
+                    children: [
+                        {name: "Academic disciplines", icon: "🎓", count: "2M+"},
+                        {name: "People", icon: "👤", count: "1.5M+"},
+                        {name: "History", icon: "📜", count: "800K+"},
+                        {name: "Geography", icon: "🌍", count: "700K+"},
+                        {name: "Science", icon: "🔬", count: "1M+"},
+                        {name: "Technology", icon: "⚙️", count: "800K+"},
+                        {name: "Arts", icon: "🎨", count: "500K+"},
+                        {name: "Literature", icon: "📚", count: "400K+"}
+                    ]
+                },
+                "Wikipedia": {
+                    icon: "🏠",
+                    count: "Meta",
+                    children: [
+                        {name: "Help", icon: "❓", count: "10K+"},
+                        {name: "Administration", icon: "🛠️", count: "20K+"},
+                        {name: "Policies", icon: "📋", count: "5K+"}
+                    ]
+                },
+                "People": {
+                    icon: "👤",
+                    count: "1.5M+",
+                    children: [
+                        {name: "By nationality", icon: "🌍", count: "800K+"},
+                        {name: "By occupation", icon: "💼", count: "1M+"},
+                        {name: "By century", icon: "⏰", count: "500K+"}
+                    ]
+                },
+                "History": {
+                    icon: "📜",
+                    count: "800K+",
+                    children: [
+                        {name: "By period", icon: "⏰", count: "400K+"},
+                        {name: "By region", icon: "🌍", count: "500K+"},
+                        {name: "Wars", icon: "⚔️", count: "100K+"}
+                    ]
+                },
+                "Geography": {
+                    icon: "🌍",
+                    count: "700K+",
+                    children: [
+                        {name: "Countries", icon: "🏳️", count: "100K+"},
+                        {name: "Cities", icon: "🏙️", count: "300K+"},
+                        {name: "Landforms", icon: "🏔️", count: "200K+"}
+                    ]
+                },
+                "Natural sciences": {
+                    icon: "🔬",
+                    count: "1M+",
+                    children: [
+                        {name: "Physics", icon: "⚛️", count: "200K+"},
+                        {name: "Chemistry", icon: "🧪", count: "150K+"},
+                        {name: "Biology", icon: "🦠", count: "300K+"},
+                        {name: "Astronomy", icon: "🌌", count: "100K+"},
+                        {name: "Mathematics", icon: "🔢", count: "250K+"}
+                    ]
+                },
+                "Technology": {
+                    icon: "⚙️",
+                    count: "800K+",
+                    children: [
+                        {name: "Computer science", icon: "💻", count: "300K+"},
+                        {name: "Engineering", icon: "🔧", count: "200K+"},
+                        {name: "Transportation", icon: "🚗", count: "150K+"}
+                    ]
+                },
+                "Humanities": {
+                    icon: "📚",
+                    count: "600K+",
+                    children: [
+                        {name: "Philosophy", icon: "🤔", count: "100K+"},
+                        {name: "Religion", icon: "🛐", count: "150K+"},
+                        {name: "Language", icon: "🗣️", count: "200K+"}
+                    ]
+                },
+                "Arts": {
+                    icon: "🎨",
+                    count: "500K+",
+                    children: [
+                        {name: "Visual arts", icon: "🖼️", count: "200K+"},
+                        {name: "Performing arts", icon: "🎭", count: "150K+"},
+                        {name: "Music", icon: "🎵", count: "200K+"}
+                    ]
+                },
+                "Culture": {
+                    icon: "🎭",
+                    count: "400K+",
+                    children: [
+                        {name: "Popular culture", icon: "🎬", count: "200K+"},
+                        {name: "Traditions", icon: "🎊", count: "100K+"}
+                    ]
+                },
+                "Society": {
+                    icon: "👥",
+                    count: "500K+",
+                    children: [
+                        {name: "Social issues", icon: "⚖️", count: "200K+"},
+                        {name: "Politics", icon: "🏛️", count: "300K+"}
+                    ]
+                }
+            }
+        };
+        
+        let currentLang = 'zh';
+        
+        function renderTree(lang) {
+            const container = document.getElementById('categoryTree');
+            const data = categoriesData[lang];
+            
+            let html = '';
+            for (const [category, info] of Object.entries(data)) {
+                html += `
+                    <div class="category root" onclick="toggleChildren(this)">
+                        <span class="toggle">▶</span>
+                        <span class="icon">${info.icon}</span>
+                        <span>${category}</span>
+                        <span class="count">${info.count}</span>
+                    </div>
+                    <div class="children">
+                        ${info.children.map(child => `
+                            <div class="category">
+                                <span class="icon">${child.icon}</span>
+                                <span>${child.name}</span>
+                                <span class="count">${child.count}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        function toggleChildren(element) {
+            const children = element.nextElementSibling;
+            const toggle = element.querySelector('.toggle');
+            
+            if (children.classList.contains('open')) {
+                children.classList.remove('open');
+                toggle.classList.remove('open');
+            } else {
+                children.classList.add('open');
+                toggle.classList.add('open');
+            }
+        }
+        
+        function expandAll() {
+            document.querySelectorAll('.children').forEach(el => el.classList.add('open'));
+            document.querySelectorAll('.toggle').forEach(el => el.classList.add('open'));
+        }
+        
+        function collapseAll() {
+            document.querySelectorAll('.children').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('.toggle').forEach(el => el.classList.remove('open'));
+        }
+        
+        function switchLang(lang) {
+            currentLang = lang;
+            
+            // 更新按钮状态
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 重新渲染树
+            renderTree(lang);
+        }
+        
+        // 搜索功能
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const categories = document.querySelectorAll('.category');
+            
+            categories.forEach(cat => {
+                const text = cat.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    cat.style.display = 'flex';
+                    // 显示父级
+                    let parent = cat.parentElement;
+                    while (parent) {
+                        if (parent.classList.contains('children')) {
+                            parent.classList.add('open');
+                        }
+                        parent = parent.parentElement;
+                    }
+                } else {
+                    cat.style.display = 'none';
+                }
+            });
+        });
+        
+        // 初始化
+        renderTree('zh');
+    </script>
+</body>
+</html>
