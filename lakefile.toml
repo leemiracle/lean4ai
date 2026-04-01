@@ -1,0 +1,7 @@
+name = "Lean4Experiments"
+version = "0.1.0"
+defaultTargets = ["Experiments"]
+
+[[lean_lib]]
+name = "Experiments"
+roots = ["Experiments"]

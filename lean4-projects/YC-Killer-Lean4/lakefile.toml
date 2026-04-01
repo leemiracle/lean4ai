@@ -9,4 +9,4 @@ rev = "v4.14.0"
 
 [[lean_lib]]
 name = "YC-Killer-Lean4"
-roots = ["YC-Killer-Lean4", "Agile", "Leantime", "Quant", "Medical", "Certigrad4", "Education"]
+roots = ["YC-Killer-Lean4", "Agile", "Leantime", "Quant", "Medical", "Certigrad4", "Education", "Experiments"]
